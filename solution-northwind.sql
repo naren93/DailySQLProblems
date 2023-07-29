@@ -37,3 +37,14 @@ SELECT firstname, lastname, title, birthdate FROM Northwind.Employee ORDER BY bi
 -- 11. Showing only date with datetime field -
 SELECT firstname, lastname, title, date(birthdate) AS DOB FROM Northwind.Employee ORDER BY birthdate;
 
+-- 12. Show the FirstName and LastName columns from the Employees table and create a new column called FullName -
+SELECT CONCAT(firstname, " ", lastname) AS FullName FROM Northwind.Employee;
+
+--13. In the OrderDetails table, we have the fields UnitPrice and Quantity. Create a new field, TotalPrice, that multiplies these two together. We’ll ignore the Discount field for now. In addition, show the OrderID, ProductID, UnitPrice, and Quantity. Order by OrderID and ProductID.
+SELECT orderId, productId, UnitPrice, quantity, (UnitPrice * quantity) AS TotalPrice FROM Northwind.OrderDetail;
+
+-- 14. How many customers do we have in the Customers table? Show one value only, and don’t rely on getting the recordcount at the end of a resultset.
+SELECT count(*) AS TotalCustomers FROM Northwind.Customer;
+
+-- 15. When was the first order? Show the date of the first order ever made in the Orders table.
+SELECT min(orderDate) AS FirstOrder FROM Northwind.SalesOrder;
