@@ -48,3 +48,6 @@ SELECT count(*) AS TotalCustomers FROM Northwind.Customer;
 
 -- 15. When was the first order? Show the date of the first order ever made in the Orders table.
 SELECT min(orderDate) AS FirstOrder FROM Northwind.SalesOrder;
+
+-- 16. Show the list of countries where the NorthWind has customers ?
+SELECT distinct(shipCountry) FROM Northwind.SalesOrder;
